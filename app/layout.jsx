@@ -4,7 +4,8 @@ import "./globals.css";
 //components
 import Header from "@/components/Header";
 import PageTransition from "@/components/PageTransition";
-import StairEffect from "@/components/StairEffect";
+import StairTransition from "@/components/StairTransition";
+
 
 const jetbrainsMono = JetBrains_Mono({
   variable: "--font-jetbrains-mono",
@@ -22,7 +23,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={`${jetbrainsMono.variable} antialiased`}>
         <Header />
-        <StairEffect/>
+        <StairTransition />
         <PageTransition>{children}</PageTransition>
       </body>
     </html>
