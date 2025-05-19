@@ -41,13 +41,9 @@
   --radius-xl: calc(var(--radius) + 4px);
 }
 
-body {
-  font-family: var(--font-jetbrains-mono), monospace;
-}
-
 :root {
   --radius: 0.625rem;
-  --background: oklch(1 0 0);
+  --background: oklch(0.2267 0.0152 286.18);
   --foreground: oklch(0.129 0.042 264.695);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.129 0.042 264.695);
@@ -120,5 +116,11 @@ body {
   }
   body {
     @apply bg-primary text-white leading-loose;
+    font-family: var(--font-jetbrains-mono), monospace;
   }
+}
+
+@utility container {
+  padding: 15px;
+  center: true;
 }
