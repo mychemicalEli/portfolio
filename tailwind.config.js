@@ -7,10 +7,6 @@ module.exports = {
     "./public/**/*.{js,jsx}",
   ],
   theme: {
-    container: {
-      center: true,
-      padding: "15px",
-    },
     screens: {
       sm: "640px",
       md: "768px",
