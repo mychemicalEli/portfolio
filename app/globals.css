@@ -1,6 +1,8 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+@tailwind utilities;
+
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
@@ -134,13 +136,16 @@
   .text-outline {
     -webkit-text-stroke: 1px #ffffff;
   }
-  
+
   .group:hover .text-outline {
     -webkit-text-stroke: 1px #00ff99;
   }
 }
 
-@utility container {
-  padding: 15px;
-  center: true;
+@layer utilities {
+  .container {
+    padding: 15px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
