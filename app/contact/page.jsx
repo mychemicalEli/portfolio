@@ -1,5 +1,7 @@
 "use client";
 
+import { useRef } from "react";
+import emailjs from "emailjs-com";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -13,6 +15,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { FaPhoneAlt, FaEnvelope, FaMapMarkedAlt } from "react-icons/fa";
+import { motion } from "framer-motion";
 
 const info = [
   {
@@ -32,9 +35,30 @@ const info = [
   },
 ];
 
-import { motion } from "framer-motion";
-
 const Contact = () => {
+  const formRef = useRef(null);
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "service_sunspf4", // service_id
+        "template_1pq4qfn", // template_id
+        formRef.current,
+        "1FC3gY57anwj4v4lS" // key
+      )
+      .then(
+        () => {
+          alert("Mensaje enviado correctamente 🚀");
+        },
+        (error) => {
+          console.error("Error:", error);
+          alert("Error al enviar mensaje ❌");
+        }
+      );
+  };
+
   return (
     <motion.section
       initial={{ opacity: 0 }}
@@ -46,23 +70,37 @@ const Contact = () => {
     >
       <div className="container mx-auto">
         <div className="flex flex-col xl:flex-row gap-[30px]">
-          {/** form */}
+          {/* form */}
           <div className="xl:w-[54%] order-2 xl:order-none">
-            <form className="flex flex-col gap-6 p-10 bg-[#27272c] rounded-xl">
+            <form
+              ref={formRef}
+              onSubmit={sendEmail}
+              className="flex flex-col gap-6 p-10 bg-[#27272c] rounded-xl"
+            >
               <h3 className="text-4xl text-accent">Let's work together!</h3>
               <p className="text-white/60">
-                {" "}
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Est quo
                 et labore optio distinctio officiis?
               </p>
-              {/** input */}
+
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <Input type="firstname" placeholder="First Name" />
-                <Input type="lastname" placeholder="Last Name" />
-                <Input type="email" placeholder="Email" />
-                <Input type="phone" placeholder="Phone" />
+                <Input
+                  type="text"
+                  name="first_name"
+                  placeholder="First Name"
+                  required
+                />
+                <Input
+                  type="text"
+                  name="last_name"
+                  placeholder="Last Name"
+                  required
+                />
+                <Input type="email" name="email" placeholder="Email" required />
+                <Input type="tel" name="phone" placeholder="Phone" required />
               </div>
-              {/** select */}
+
+              {/* select */}
               <Select>
                 <SelectTrigger className="w-full">
                   <SelectValue placeholder="Select a service" />
@@ -76,18 +114,20 @@ const Contact = () => {
                   </SelectGroup>
                 </SelectContent>
               </Select>
-              {/** textarea */}
               <Textarea
+                name="message"
                 className="h-[200px]"
                 placeholder="Type your message here."
+                required
               />
-              {/** btn */}
-              <Button size="md" className="max-w-40">
+
+              <Button type="submit" size="md" className="max-w-40">
                 Send message
               </Button>
             </form>
           </div>
-          {/** info */}
+
+          {/* info */}
           <div className="flex-1 flex items-center xl:justify-end order-1 xl:order-none mb-8 xl:mb-0">
             <ul className="flex flex-col gap-10">
               {info.map((item, index) => {
