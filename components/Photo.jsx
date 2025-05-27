@@ -26,6 +26,7 @@ const Photo = () => {
             priority
             quality={100}
             fill
+            sizes="true"
             alt="profile pic"
             className="object-contain"
           />
@@ -51,9 +52,9 @@ const Photo = () => {
               rotate: [120, 360],
             }}
             transition={{
-                duration: 20,
-                repeat: Infinity,
-                repeatType: "reverse",
+              duration: 20,
+              repeat: Infinity,
+              repeatType: "reverse",
             }}
           />
         </motion.svg>
