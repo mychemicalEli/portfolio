@@ -10,14 +10,13 @@ const Home = () => {
         <div className="flex flex-col xl:flex-row items-center justify-between xl:pt-8 xl:pb-24">
           {/* text */}
           <div className="text-center xl:text-left order-2 xl:order-none">
-            <span className="text-xl">Software Developer</span>
+            <span className="text-xl">Software Developer | Graphic Designer</span>
             <h1 className="h1 mb-6">
               Hello I'm <br />{" "}
               <span className="text-accent">Elizabeth Blanco </span>
             </h1>
             <p className="max-w-[500px] mb-9 text-white/80">
-              I excel at crafting elegant digital experiencies and I am
-              proficient in various programming languages and technologies.
+              The button has to work and send the request to the API, but if we don’t add a border-radius, padding, or a nice color... does it <i>really work?</i>
             </p>
             {/** btn and socials */}
             <div className="flex flex-col xl:flex-row items-center gap-8">
@@ -27,7 +26,7 @@ const Home = () => {
                 className="uppercase flex items-center gap-2"
                 asChild
               >
-                <a href="/assets/resume/cvElizabethBlanco2025.pdf" download>
+                <a href="/assets/resume/cvElizabethEnglish2025.pdf" download>
                   <span>Download CV</span>
                   <FiDownload className="text-xl" />
                 </a>

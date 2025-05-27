@@ -5,15 +5,7 @@ import emailjs from "emailjs-com";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import {
-  Select,
-  SelectContent,
-  SelectGroup,
-  SelectItem,
-  SelectLabel,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
+
 import { FaPhoneAlt, FaEnvelope, FaMapMarkedAlt } from "react-icons/fa";
 import { motion } from "framer-motion";
 
@@ -75,12 +67,12 @@ const Contact = () => {
             <form
               ref={formRef}
               onSubmit={sendEmail}
-              className="flex flex-col gap-6 p-10 bg-[#27272c] rounded-xl"
+              className="flex flex-col gap-6 p-10 bg-[#2D3250] rounded-xl"
             >
-              <h3 className="text-4xl text-accent">Let's work together!</h3>
+              <h3 className="text-4xl text-accent font-bold">Let's work together!</h3>
               <p className="text-white/60">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Est quo
-                et labore optio distinctio officiis?
+                Open to new challenges where I can keep learning and give my
+                best — both personally and professionally.
               </p>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -100,20 +92,6 @@ const Contact = () => {
                 <Input type="tel" name="phone" placeholder="Phone" required />
               </div>
 
-              {/* select */}
-              <Select>
-                <SelectTrigger className="w-full">
-                  <SelectValue placeholder="Select a service" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectGroup>
-                    <SelectLabel>Select a service</SelectLabel>
-                    <SelectItem value="est"> Web Developmet</SelectItem>
-                    <SelectItem value="cst"> UI/UX Design</SelectItem>
-                    <SelectItem value="mst"> Logo Design</SelectItem>
-                  </SelectGroup>
-                </SelectContent>
-              </Select>
               <Textarea
                 name="message"
                 className="h-[200px]"
@@ -121,7 +99,7 @@ const Contact = () => {
                 required
               />
 
-              <Button type="submit" size="md" className="max-w-40">
+              <Button type="submit" size="md" className="max-w-40 cursor-pointer">
                 Send message
               </Button>
             </form>
@@ -133,7 +111,7 @@ const Contact = () => {
               {info.map((item, index) => {
                 return (
                   <li key={index} className="flex items-center gap-6">
-                    <div className="w-[52px] h-[52px] xl:w-[72px] xl:h-[72px] bg-[#27272c] text-accent rounded-md flex items-center justify-center">
+                    <div className="w-[52px] h-[52px] xl:w-[72px] xl:h-[72px] bg-[#2D3250] text-accent rounded-md flex items-center justify-center">
                       <div className="text-[28px]">{item.icon}</div>
                     </div>
                     <div className="flex-1">

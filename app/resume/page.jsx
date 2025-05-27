@@ -4,17 +4,24 @@ import {
   FaHtml5,
   FaCss3,
   FaJs,
-  FaReact,
   FaFigma,
-  FaNodeJs,
+  FaAngular,
+  FaJava,
+  FaGitAlt,
+  FaBootstrap,
 } from "react-icons/fa";
-import { SiTailwindcss, SiNextdotjs } from "react-icons/si";
+import {
+  SiTailwindcss,
+  SiAdobecreativecloud,
+  SiDotnet,
+  SiTypescript,
+} from "react-icons/si";
 
 //about data
 const about = {
   title: "About me",
   description:
-    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed odio harum sapiente! Culpa maxime nesciunt sequi nulla.",
+    "Hi! I'm Elizabeth — a curious mix of code, creativity, and someone who still carries film rolls like it's the '90s. I love reading, adore animals (seriously, all of them), and I'm always up for learning something new — as long as there's coffee involved.",
   info: [
     {
       fieldName: "Name",
@@ -45,75 +52,63 @@ const about = {
 
 //experience data
 const experience = {
-  icon: "",
   title: "My experience",
   description:
-    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed odio harum sapiente! Culpa maxime nesciunt sequi nulla.",
+    "Here you'll find my full journey — not just web development roles, but every job that’s helped shape who I am today. From different industries and experiences, each one added a piece to the puzzle.",
   items: [
     {
-      company: "Tech Solutions",
-      position: "Full Stack Developer",
-      duration: "2022 - Present",
+      company: "Nunsys",
+      position: "Full Stack Developer Intern",
+      duration: "Oct 2024 - Dic 2024",
     },
     {
-      company: "Web Design Studio",
-      position: "Front end Developer Intern",
-      duration: "Summer 2021",
+      company: "Primor",
+      position: "Sales Assistant",
+      duration: "2022 - 2023",
     },
     {
-      company: "E-commerce Startup",
-      position: "Freelance Web Developer",
-      duration: "2020 - 2021",
+      company: "Inglot",
+      position: "Makeup artist",
+      duration: "Feb 2022 - Apr 2022",
     },
     {
-      company: "Tech Academy",
-      position: "Teaching Assistant",
-      duration: "2019 - 2020",
+      company: "Dunkin Coffee",
+      position: "Waitress",
+      duration: "2021 - 2022",
     },
     {
-      company: "Digital Agency",
-      position: "Graphic Designer",
-      duration: "2018 - 2019",
-    },
-    {
-      company: "Software Development Firm",
-      position: "Junior Developer",
-      duration: "2017 - 2018",
+      company: "La Industrial de Fotografía",
+      position: "Photography Assistant Intern",
+      duration: "Jan 2019 - Jun 2019",
     },
   ],
 };
 
 //education experience
 const education = {
-  icon: "",
   title: "My education",
   description:
-    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed odio harum sapiente! Culpa maxime nesciunt sequi nulla.",
+    "It started with color theory and typography, got a glam twist with makeup brushes, and now it's all about clean code and clever UI. My education's been anything but ordinary — and I wouldn't have it any other way.",
   items: [
     {
-      institution: "Online Course Platform",
-      degree: "Full Stack Web Development Bootcamp",
-      duration: "2023",
+      institution: "Ilerna",
+      degree: "Web Application Development",
+      duration: "2023 - 2025",
     },
     {
-      institution: "Code Academy",
-      degree: "Front-end Track",
-      duration: "2022",
-    },
-    {
-      institution: "Online Course",
-      degree: "Programming Course",
+      institution: "Nuria Sendra Makeup School",
+      degree: "Professional Make Up and FX effects",
       duration: "2020 - 2021",
     },
     {
-      institution: "Tech Institute",
-      degree: "Certified Web Developer",
-      duration: "2019",
+      institution: "Murcia School of Design",
+      degree: "Graphic Design",
+      duration: "2015 - 2019",
     },
     {
-      institution: "Design School",
-      degree: "Diploma in Graphic Design",
-      duration: "2016 - 2018",
+      institution: "IES Mar Menor",
+      degree: "High School Diploma in Social Sciences",
+      duration: "2013 - 2015",
     },
   ],
 };
@@ -122,8 +117,12 @@ const education = {
 const skills = {
   title: "My Skills",
   description:
-    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo quae reprehenderit beatae magnam eos nihil minima corporis.",
+    "These are some of my standout skills — though they’re always growing and evolving.",
   skillList: [
+    {
+      icon: <FaAngular />,
+      name: "angular",
+    },
     {
       icon: <FaHtml5 />,
       name: "html 5",
@@ -137,25 +136,36 @@ const skills = {
       name: "javascript",
     },
     {
-      icon: <FaReact />,
-      name: "react.js",
+      icon: <SiTypescript />,
+      name: "TypeScript",
     },
     {
-      icon: <FaFigma />,
-      name: "figma",
+      icon: <FaBootstrap />,
+      name: "Bootstrap",
     },
-    {
-      icon: <FaNodeJs />,
-      name: "node.js",
-    },
-
     {
       icon: <SiTailwindcss />,
       name: "tailwind.css",
     },
     {
-      icon: <SiNextdotjs />,
-      name: "next.js",
+      icon: <FaJava />,
+      name: "java",
+    },
+    {
+      icon: <SiDotnet />,
+      name: "C#",
+    },
+    {
+      icon: <FaGitAlt />,
+      name: "Git version control",
+    },
+    {
+      icon: <SiAdobecreativecloud />,
+      name: "Adobe Creative Cloud",
+    },
+    {
+      icon: <FaFigma />,
+      name: "figma",
     },
   ],
 };
@@ -198,7 +208,7 @@ const Resume = () => {
             <TabsContent value="experience" className="w-full">
               <div className="flex flex-col gap-[30px] text-center xl:text-left">
                 <h3 className="text-4xl font-bold">{experience.title}</h3>
-                <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0">
+                <p className="max-w-[800px] text-white/60 mx-auto xl:mx-0">
                   {experience.description}
                 </p>
                 <ScrollArea className="h-[400px]">
@@ -207,7 +217,7 @@ const Resume = () => {
                       return (
                         <li
                           key={index}
-                          className="bg-[#232329] h-[184px] py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start gap-1"
+                          className="bg-[#2D3250] h-[184px] py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start gap-1"
                         >
                           <span className="text-accent">{item.duration}</span>
                           <h3 className="text-xl max-w-[260px] min-h-[60px] text-center lg:text-left">
@@ -229,7 +239,7 @@ const Resume = () => {
             <TabsContent value="education" className="w-full">
               <div className="flex flex-col gap-[30px] text-center xl:text-left">
                 <h3 className="text-4xl font-bold">{education.title}</h3>
-                <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0">
+                <p className="max-w-[800px] text-white/60 mx-auto xl:mx-0">
                   {education.description}
                 </p>
                 <ScrollArea className="h-[400px]">
@@ -238,7 +248,7 @@ const Resume = () => {
                       return (
                         <li
                           key={index}
-                          className="bg-[#232329] h-[184px] py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start gap-1"
+                          className="bg-[#2D3250] h-[184px] py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start gap-1"
                         >
                           <span className="text-accent">{item.duration}</span>
                           <h3 className="text-xl max-w-[260px] min-h-[60px] text-center lg:text-left">
@@ -261,7 +271,7 @@ const Resume = () => {
               <div className="flex flex-col gap-[30px]">
                 <div className="flex flex-col gap-[30px] text-center xl:text-left">
                   <h3 className="text-4xl font-bold">{skills.title}</h3>
-                  <p className="max-w-[600px] text-white/60">
+                  <p className="max-w-[800px] text-white/60">
                     {skills.description}
                   </p>
                 </div>
@@ -271,8 +281,8 @@ const Resume = () => {
                       <li key={index}>
                         <TooltipProvider delayDuration={100}>
                           <Tooltip>
-                            <TooltipTrigger className="w-full h-[150px] bg-[#232329] rounded-xl flex justify-center items-center group">
-                              <div className="text-6xl group-hover:text-accent transition-all duration-300">
+                            <TooltipTrigger className="w-full h-[80px] bg-[#2D3250] rounded-xl flex justify-center items-center group">
+                              <div className="text-4xl group-hover:text-accent transition-all duration-300">
                                 {skill.icon}
                               </div>
                             </TooltipTrigger>
@@ -295,15 +305,16 @@ const Resume = () => {
             >
               <div className="flex flex-col gap-[30px]">
                 <h3 className="text-4xl font-bold">{about.title}</h3>
-                <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0">
+                <p className="max-w-[800px] text-white/60 mx-auto xl:mx-0">
                   {about.description}
                 </p>
                 <ul className="grid grid-cols-1 xl:grid-cols-2 gap-y-6 max-w-[620px] mx-auto xl:mx-0">
                   {about.info.map((item, index) => {
                     return (
-                      <li 
-                      key={index}
-                      className="flex items-center justify-center xl:justify-start gap-4">
+                      <li
+                        key={index}
+                        className="flex flex-col sm:flex-row  gap-1 sm:gap-4 break-words"
+                      >
                         <span className="text-white/60">{item.fieldName}</span>
                         <span className="text-xl">{item.fieldValue}</span>
                       </li>
